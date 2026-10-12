@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>EXPENSE TRACKER</h1>
+
+    <div class="summary-cards">
+        <div class="income-section">
+        <h2>Income</h2>
+        
+        <p id="income-total">₹0</p>
+    </div>
+
+    <div class="expenses-section">
+        <h2>Expenses</h2>
+        <P id="expense-total">₹0</P>
+    </div>
+
+    <div class="balance-section">
+        <h2>Balance</h2>
+        <P id="balance-total">₹0</P>
+    </div>
+    </div>
+
+
+    <div class="transaction-form">
+        
+        <h2 id="form-title">Add Transactions</h2>
+
+        <div>
+            <label for="description">Description</label>
+            <input type="text" name="description" id="description">
+        </div>
+
+        <div>
+            <label for="amount">Amount</label>
+            <input type="number" name="amount" id="amount">
+        </div>
+
+        <div>
+            <label for="type">Type</label>
+            <select name="type" id="type">
+                <option value="income">Income</option>
+                <option value="expense">Expense</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="category">Category"</label>
+            <select name="category" id="category">
+                <option value="food">Food</option>
+                <option value="travel">Travel</option>
+                <option value="shopping">Shopping</option>
+                <option value="bills">Bills</option>
+                <option value="salary">Salary</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="date">Date</label>
+            <input type="date" id="date">
+        </div>
+
+        <div>
+            <button id="add-button">Add</button>
+            <button id="cancel-button" type="button">Cancel</button>
+        </div>
+
+    </div>
+
+    <div class="transaction-section">
+
+        <h2>Transactions</h2>
+
+        <div class="transaction-filters">
+
+            <input type="text" id="search-input" placeholder="Search transactions...">
+
+            <select  id="type-filter">
+                <option value="all">All Types</option>
+                <option value="income">Income</option>
+                <option value="expense">Expense</option>
+            </select>
+
+            <select id="category-filter">
+                <option value="all">All Categories</option>
+                <option value="food">Food</option>
+                <option value="travel">Travel</option>
+                <option value="shopping">Shopping</option>
+                <option value="bills">Bills</option>
+                <option value="salary">Salary</option>
+                <option value="other">Other</option>
+            </select>
+
+            <select  id="sort-filter">
+                <option value="newest">Newest First</option>
+                <option value="oldest">Oldest First</option>
+                <option value="highest">Highest Amount</option>
+                <option value="lowest">Lowest Amount</option>
+            </select>
+
+        </div>
+
+        <button id="clear-all-button">Clear All Transactions</button>
+        <button id="export-button">Export CSV</button>
+        <div id="transactions-list"></div>
+
+        <!-- Charts Section  -->
+        <div class="charts-section">
+            <h2>Financial Overview</h2>
+
+            <div class="chart-container">
+                <h3>Income vs Expense</h3>
+                <p id="income-chart-empty" class="chart-empty">
+                    Add transactions to see your financial overview.
+                </p>
+                <canvas id="income-expense-chart"></canvas>
+            </div>
+
+            <div class="chart-container">
+                <h3>Expense by Category</h3>
+                <p id="category-chart-empty" class="chart-empty">
+                    Add an expense to see your spending categories.
+                </p>
+                <canvas id="category-chart"></canvas>
+
+            </div>
+
+        </div>
+
+        
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+   
